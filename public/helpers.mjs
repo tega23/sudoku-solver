@@ -45,3 +45,21 @@ export function grid_values(boxes, grid_string) {
   }
   return values;
 }
+
+export function findPeers(array_of_units, search_term) {
+  let peers = [];
+  for (let unit of array_of_units) {
+    if (unit.indexOf(search_term) != -1) {
+      peers = unit.filter(v => v != search_term);
+      return peers;
+    }
+  }
+  return;
+}
+
+export function findAllPeers(row_units, col_units, square_units, search_term) {
+  let row_peers = findPeers(row_units, search_term);
+  let col_peers = findPeers(col_units, search_term);
+  let square_peers = findPeers(square_units, search_term);
+  return [...row_peers, ...col_peers, ...square_peers];
+}
