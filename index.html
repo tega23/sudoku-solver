@@ -11,6 +11,21 @@
 
 <body>
     Sudoku
+    <form action="." id="grid" method="POST" id="grid">
+    </form>
 </body>
+<script>
+    var grid = document.getElementById('grid');
+    for (let i = 0; i < 5; i++) {
+        let z = document.createElement('input');
+        z.setAttribute("type", "text")
+        z.setAttribute("name", "box")
+        grid.appendChild(z);
+    }
+    var button = document.createElement('input')
+    button.setAttribute("value", "CALCULATE");
+    button.setAttribute("type", "submit")
+    grid.appendChild(button)
+</script>
 
 </html>

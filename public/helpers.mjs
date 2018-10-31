@@ -63,3 +63,22 @@ export function findAllPeers(row_units, col_units, square_units, search_term) {
   let square_peers = findPeers(square_units, search_term);
   return [...row_peers, ...col_peers, ...square_peers];
 }
+
+export function numberOfAssignedBoxes(grid_values) {
+  let count = 0;
+  for (let [key, value] of Object.entries(grid_values)) {
+    if (value.length == 1) {
+      count += 1;
+    }
+  }
+  return count;
+}
+
+export function checkForEmptyBox(grid_values) {
+  for (let [key, value] of Object.entries(grid_values)) {
+    if (value.length == 0) {
+      return true;
+    }
+  }
+  return false;
+}
