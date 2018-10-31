@@ -24,4 +24,5 @@ tr:nth-child(3n) td {
 input {
   height: inherit;
   width: inherit;
+  text-align: center;
 }
