@@ -2,7 +2,19 @@
   "name": "sudoku_solver",
   "version": "1.0.0",
   "description": "An Artificial Intelligent agent that solves any given sudoku.",
-  "main": "index.js",
+  "main": "start.js",
   "author": "Tega Erekata",
-  "license": "MIT"
+  "license": "MIT",
+  "contributors": [
+    "Christopher Obasi",
+    "Ose Iyoke",
+    "Adeyemo Daniel"
+  ],
+  "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0"
+  },
+  "dependencies": {
+    "express": "^4.16.4"
+  }
 }
