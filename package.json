@@ -1,0 +1,8 @@
+{
+  "name": "sudoku_solver",
+  "version": "1.0.0",
+  "description": "An Artificial Intelligent agent that solves any given sudoku.",
+  "main": "index.js",
+  "author": "Tega Erekata",
+  "license": "MIT"
+}
