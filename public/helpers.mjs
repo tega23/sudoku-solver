@@ -1,3 +1,14 @@
+export function stringify_array(array) {
+  const grid_string = array.reduce((accumulator, current_value) => {
+    if (current_value === '') {
+      return (accumulator += '.');
+    } else {
+      return (accumulator += current_value);
+    }
+  }, '');
+  return grid_string;
+}
+
 export function cross(rows, cols) {
   let result = [];
   for (let row of rows) {
@@ -81,4 +92,14 @@ export function checkForEmptyBox(grid_values) {
     }
   }
   return false;
+}
+
+export function getMinimumBox(boxes, grid_values) {
+  let minimum_box = boxes[0];
+  for (let box of boxes) {
+    if (grid_values[box].length < grid_values[minimum_box].length) {
+      minimum_box = box;
+    }
+  }
+  return minimum_box;
 }

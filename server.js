@@ -1,6 +1,8 @@
 import express from 'express';
 import path from 'path';
-var bodyParser = require('body-parser');
+import search, { stringToGridValues } from './public/index.mjs';
+
+const bodyParser = require('body-parser');
 
 const app = express();
 
@@ -19,8 +21,10 @@ app.get('/', (req, res) => {
 });
 
 app.post('/', (req, res) => {
-  console.log(req.body);
-  res.send('YYAAA');
+  // let grid_string = stringify_array(req.body.box);
+  let grid_string = '..3.2.6..9..3.5..1..18.64....81.29..7.......8..67.82....26.95..8..2.3..9..5.1.3..';
+  const puzzle = search(stringToGridValues(grid_string));
+  res.send(puzzle);
 });
 
 const port = process.env.PORT || 3000;
