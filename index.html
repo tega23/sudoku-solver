@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
     <!-- <script src="./index.mjs" type="module"></script> -->
 </head>
 
@@ -16,11 +17,19 @@
 </body>
 <script>
     var grid = document.getElementById('grid');
-    for (let i = 0; i < 5; i++) {
-        let z = document.createElement('input');
-        z.setAttribute("type", "text")
-        z.setAttribute("name", "box")
-        grid.appendChild(z);
+    var table = document.createElement('table');
+    grid.appendChild(table);
+    for (let i = 0; i < 9; i++) {
+        let row = document.createElement('tr')
+        for (let j = 0; j < 9; j++) {
+            let col = document.createElement('td')
+            let z = document.createElement('input');
+            z.setAttribute("type", "text")
+            z.setAttribute("name", "box")
+            col.appendChild(z);
+            row.appendChild(col)
+        }
+        table.appendChild(row);
     }
     var button = document.createElement('input')
     button.setAttribute("value", "CALCULATE");

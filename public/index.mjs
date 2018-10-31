@@ -76,7 +76,6 @@ function reduce_puzzle(grid_values) {
 
 export default function search(values) {
   values = reduce_puzzle(values);
-  console.log(values);
   if (values === false) {
     return false;
   }

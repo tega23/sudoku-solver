@@ -1,6 +1,7 @@
 import express from 'express';
 import path from 'path';
 import search, { stringToGridValues } from './public/index.mjs';
+import { getValuesFromObject } from './public/helpers.mjs';
 
 const bodyParser = require('body-parser');
 
@@ -24,7 +25,9 @@ app.post('/', (req, res) => {
   // let grid_string = stringify_array(req.body.box);
   let grid_string = '..3.2.6..9..3.5..1..18.64....81.29..7.......8..67.82....26.95..8..2.3..9..5.1.3..';
   const puzzle = search(stringToGridValues(grid_string));
-  res.send(puzzle);
+  const puzzle_array = getValuesFromObject(puzzle);
+  // res.send(puzzle_array);
+  res.render('./result.ejs', { puzzle_array: puzzle_array });
 });
 
 const port = process.env.PORT || 3000;

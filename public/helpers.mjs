@@ -103,3 +103,11 @@ export function getMinimumBox(boxes, grid_values) {
   }
   return minimum_box;
 }
+
+export function getValuesFromObject(object) {
+  let array_values = [];
+  for ([k, v] of Object.entries(object)) {
+    array_values.push(v);
+  }
+  return array_values;
+}

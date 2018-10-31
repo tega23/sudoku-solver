@@ -1,0 +1,27 @@
+table {
+  margin: 1em auto;
+}
+
+td {
+  height: 40px;
+  width: 40px;
+  border: 1px solid;
+  text-align: center;
+}
+td:first-child {
+  border-left: solid;
+}
+td:nth-child(3n) {
+  border-right: solid;
+}
+tr:first-child {
+  border-top: solid;
+}
+tr:nth-child(3n) td {
+  border-bottom: solid;
+}
+
+input {
+  height: inherit;
+  width: inherit;
+}
