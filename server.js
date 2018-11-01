@@ -22,16 +22,11 @@ app.get('/', (req, res) => {
 });
 
 app.post('/api/solve', (req, res) => {
-  console.log(req.body)
-  
   const grid_string = req.body.grid_string;
-
   const puzzle = search(stringToGridValues(grid_string));
   const puzzle_array = getValuesFromObject(puzzle);
-  const puzzle_string = stringify_array(puzzle_array)
-  console.log(puzzle_string.toString())
-  
-  res.send( {data: puzzle_string.toString()} )  
+  const puzzle_string = stringify_array(puzzle_array);
+  res.send({ data: puzzle_string.toString() });
 });
 
 /*

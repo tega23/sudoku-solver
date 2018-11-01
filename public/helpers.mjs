@@ -95,13 +95,19 @@ export function checkForEmptyBox(grid_values) {
 }
 
 export function getMinimumBox(boxes, grid_values) {
-  let minimum_box = boxes[0];
+  let box_index_to_length = [];
   for (let box of boxes) {
-    if (grid_values[box].length < grid_values[minimum_box].length) {
-      minimum_box = box;
+    if (grid_values[box].length > 1) {
+      box_index_to_length.push([box, grid_values[box].length]);
     }
   }
-  return minimum_box;
+  let minimum_box = box_index_to_length[0];
+  for ([box, box_length] of box_index_to_length) {
+    if (box_length < minimum_box[1]) {
+      minimum_box = [box, box_length];
+    }
+  }
+  return minimum_box[0];
 }
 
 export function getValuesFromObject(object) {

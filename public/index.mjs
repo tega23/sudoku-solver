@@ -56,8 +56,7 @@ function only_choice(grid_values, unitlist) {
 }
 
 function reduce_puzzle(grid_values) {
-  let stalled = false;
-  while (!stalled) {
+  while (true) {
     let solved_values_before = numberOfAssignedBoxes(grid_values);
 
     let values = eliminate(grid_values);
@@ -66,9 +65,11 @@ function reduce_puzzle(grid_values) {
 
     let solved_values_after = numberOfAssignedBoxes(grid_values);
 
-    stalled = solved_values_before == solved_values_after;
     if (checkForEmptyBox(grid_values)) {
       return false;
+    }
+    if (solved_values_before === solved_values_after) {
+      break;
     }
   }
   return grid_values;
@@ -76,6 +77,7 @@ function reduce_puzzle(grid_values) {
 
 export default function search(values) {
   values = reduce_puzzle(values);
+
   if (values === false) {
     return false;
   }
@@ -83,6 +85,7 @@ export default function search(values) {
     return values;
   }
   const minimumBox = getMinimumBox(boxes, values);
+
   for (let value of values[minimumBox]) {
     let new_sudoku = Object.assign({}, values);
     new_sudoku[minimumBox] = value;

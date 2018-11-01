@@ -26,3 +26,25 @@ input {
   width: inherit;
   text-align: center;
 }
+
+#header {
+  text-align: center;
+}
+
+#header-buttons {
+  text-align: center;
+}
+
+#solve-btn {
+  text-align: center;
+}
+
+#footer {
+  text-align: center;
+}
+
+button {
+  padding: 8px;
+  height: 30%;
+  margin: 10px;
+}
