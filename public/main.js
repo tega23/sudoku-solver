@@ -56,6 +56,15 @@ function fillGrid(input_string) {
 function clearGrid() {
   fillGrid('.'.repeat(81));
 }
+
+function checkValidityOfGrid(input_string) {
+  if (input_string.length > 81 || input_string.match(/[a-z]/i)) {
+    console.log('YEAHH');
+    return false;
+  }
+  return true;
+}
+
 function submitHandler(e) {
   e = e || window.event;
   e.preventDefault();
@@ -66,6 +75,10 @@ function submitHandler(e) {
   for (let i = 0; i < box_inputs.length; i++) {
     if (box_inputs[i].value.trim() == '') return_string += '.';
     else return_string += box_inputs[i].value;
+  }
+  if (!checkValidityOfGrid(return_string)) {
+    fillGrid('.'.repeat(81));
+    return;
   }
   let url = '/api/solve';
   fetch(url, {
