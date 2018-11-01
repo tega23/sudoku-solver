@@ -29,16 +29,6 @@ app.post('/api/solve', (req, res) => {
   res.send({ data: puzzle_string.toString() });
 });
 
-/*
-app.post('/', (req, res) => {
-  // let grid_string = stringify_array(req.body.box);
-  let grid_string = '..3.2.6..9..3.5..1..18.64....81.29..7.......8..67.82....26.95..8..2.3..9..5.1.3..';
-  const puzzle = search(stringToGridValues(grid_string));
-  const puzzle_array = getValuesFromObject(puzzle);
-  // res.send(puzzle_array);
-  res.render('./result.ejs', { puzzle_array: puzzle_array });
-});
-*/
 
 const port = process.env.PORT || 3000;
 
