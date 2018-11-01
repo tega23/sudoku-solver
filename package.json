@@ -5,6 +5,9 @@
   "main": "start.js",
   "author": "Tega Erekata",
   "license": "MIT",
+  "scripts": {
+    "start": "node start.js"
+  },
   "contributors": [
     "Christopher Obasi",
     "Ose Iyoke",
