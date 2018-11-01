@@ -1,6 +1,6 @@
 import express from 'express';
 import path from 'path';
-import search, { stringToGridValues } from './public/index.mjs';
+import search, { stringToGridValues } from './public/algorithm.mjs';
 import { getValuesFromObject, stringify_array } from './public/helpers.mjs';
 
 const bodyParser = require('body-parser');
