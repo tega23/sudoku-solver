@@ -100,6 +100,7 @@ function submitHandler(e) {
     .then(response => response.json())
     .then(response => {
       if (response.data === '') {
+        window.alert("Set is invalid!!!");
         fillGrid('.'.repeat(81));
       }
       fillGrid(response.data);
